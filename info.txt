@@ -1,0 +1,12 @@
+﻿<category>moban</category>
+
+<album>HTML网页模板</album>
+
+<title>[HTML网页模板]响应式 网站模板 可切换颜色主题</title>
+
+<content>响应式 网站模板 可切换颜色主题</content>
+
+<refurl>index.html</refurl>
+
+<image><url>cover.jpg</url>
+<tag>网站模板 企业模板 扁平化设计风格模板 公司网站模板</tag>
