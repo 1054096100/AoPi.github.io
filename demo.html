@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+    .node circle {
+       cursor: pointer;
+       stroke-width: 4;
+    }
+
+    .node text {
+        font: 16px sans-serif;
+        font-weight: bold;
+        fill: black;
+        cursor: pointer;
+    }
+
+    .link {
+        stroke: #999;
+        stroke-opacity: .6;
+        stroke-width: 2;
+        marker-end: url(#end-arrow);
+    }
+
+    .background {
+        stroke: gray;
+        stroke-width: 1px;
+        fill: none;
+    }
+
+    .edgeLabel {
+        fill: #333;
+        font: 12px sans-serif;
+        pointer-events: none;
+    }
+    </style>
+
+    <title>Dependency Tree</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="js/cola.v3.min.js"></script>
+    <script src="js/shortest_distance/colorbrewer.js"></script>
+    <script src="js/shortest_distance/floydWarshall.js"></script>
+
+</head>
+<body>
+<div id="graph"></div>
+<script src="js/shortest_distance/forceLayout.js"></script>
+</body>
+</html>
