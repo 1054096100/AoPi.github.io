@@ -38,7 +38,7 @@ var lineFunction = d3.svg.line()
     .y(function (d) { return d.y })
     .interpolate("linear")
 
-d3.dsv("->",'text/plain')('graph.txt')
+d3.dsv("->",'text/plain')('data/graph_simple_demo.txt')
     .row(function(d) {
         // d3 does not parse multiple character delimiters well, but we can cope...
         var parent = d['parent'], child = d['>child'].substring(1)
