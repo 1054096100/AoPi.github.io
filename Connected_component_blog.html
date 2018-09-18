@@ -29,11 +29,50 @@
 		
  
 <!-- CSS end -->
+		<!-- js begin -->
+            <script src="js/d3.v3.min.js"></script>
+            <script src="js/cola.v3.min.js"></script>
+            <script src="js/connected_component/colorbrewer.js"></script>
+            <script src="js/connected_component/floydWarshall.js"></script>
 
+<!-- js end -->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		
+    <style>
+    .node circle {
+       cursor: pointer;
+       stroke-width: 4;
+    }
+
+    .node text {
+        font: 16px sans-serif;
+        font-weight: bold;
+        fill: black;
+        cursor: pointer;
+    }
+
+    .link {
+        stroke: #999;
+        stroke-opacity: .6;
+        stroke-width: 2;
+        marker-end: url(#end-arrow);
+    }
+
+    .background {
+        stroke: gray;
+        stroke-width: 1px;
+        fill: none;
+    }
+
+    .edgeLabel {
+        fill: #333;
+        font: 12px sans-serif;
+        pointer-events: none;
+    }
+    </style>
+
 	</head>
 	<body>
 	
@@ -202,6 +241,13 @@
 	
 			</div>
 			
+<!--the graph layer-->
+
+<div id="graph"></div>
+<script src="js/connected_component/forceLayout.js"></script>
+			
+			<!--layer end-->
+
 			<!-- AUTHOR -->
 							<div class="author-comment content-container-white m-bot-25">
 								<div class="author-avatar">
