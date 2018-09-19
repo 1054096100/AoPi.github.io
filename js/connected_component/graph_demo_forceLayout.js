@@ -95,18 +95,18 @@ d3.dsv("->",'text/plain')('data/graph_simple_demo.txt')
 
         nodeEnter.append("circle")
             .attr("r", 16)
-            //.on("click", function(d) { focusOnNode(d, node,  edgeLabelPath, distMatrix) })
-            //.on("mouseover", function(d) { focusOnPath(d, link, distMatrix) })
-        /*
+            .on("click", function(d) { focusOnNode(d, node,  edgeLabelPath, distMatrix) })
+            .on("mouseover", function(d) { focusOnPath(d, link, distMatrix) })
+        
         nodeEnter.append("text")
             .attr("text-anchor", "right")
             .attr("dx", "-2em")
             .attr("dy", ".35em")
             .text(function(d) { return d.name })
             .on("click", function(d) { focusOnNode(d, node,  edgeLabelPath, distMatrix) })
-*/
-        // TODO hardcoded the root here... a more sophisticated solution would determine the root(s)
-       // focusOnNode({ name: 'A' }, node, edgeLabelPath, distMatrix)
+
+       //  TODO hardcoded the root here... a more sophisticated solution would determine the root(s)
+        focusOnNode({ name: 'A' }, node, edgeLabelPath, distMatrix)
 
         force.on("tick", function() {
             link.attr("d", function (d) {
