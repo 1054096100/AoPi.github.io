@@ -40,6 +40,8 @@ var lineFunction = d3.svg.line()
 
 d3.dsv("->",'text/plain')('data/graph_simple_demo.txt')
     .row(function(d) {
+        
+        console.log(d);
         // d3 does not parse multiple character delimiters well, but we can cope...
         var parent = d['parent'], child = d['>child'].substring(1)
         return { nodes: [parent, child], link: { source: parent, target: child }  }
