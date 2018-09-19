@@ -2,7 +2,7 @@
 <html>
  	<head>
 		<title>DaSE_ECNU.2018.GRAPH_PROJECT</title>
-		<meta charset="utf-8" >
+		<meta charset=utf-8 >
 		
 		<meta name="robots" content="index, follow" > 
 		<meta name="keywords" content="" > 
@@ -24,16 +24,55 @@
 		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie-warning.css" ><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" type="text/css" media="screen" href="css/style-ie.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ei8fix.css" ><![endif]-->
-		
+
 
 		
  
 <!-- CSS end -->
+<!-- js begin -->
+            <script src="js/d3.v3.min.js"></script>
+            <script src="js/cola.v3.min.js"></script>
+            <script src="js/shortest_distance/colorbrewer.js"></script>
+            <script src="js/shortest_distance/floydWarshall.js"></script>
 
+<!-- js end -->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		
+    <style>
+    .node circle {
+       cursor: pointer;
+       stroke-width: 4;
+    }
+
+    .node text {
+        font: 16px sans-serif;
+        font-weight: bold;
+        fill: black;
+        cursor: pointer;
+    }
+
+    .link {
+        stroke: #999;
+        stroke-opacity: .6;
+        stroke-width: 2;
+        marker-end: url(#end-arrow);
+    }
+
+    .background {
+        stroke: gray;
+        stroke-width: 1px;
+        fill: none;
+    }
+
+    .edgeLabel {
+        fill: #333;
+        font: 12px sans-serif;
+        pointer-events: none;
+    }
+    </style>
+
 	</head>
 	<body>
 	
@@ -87,47 +126,70 @@
 								<nav id="main-nav">
 									<ul class="sf-menu clearfix">
 										<li ><a href="index.html">Home</a>
-											<ul>
-												<li><a href="index2.html">Home 2</a></li>
-												<li><a href="index3.html">Home 3</a></li>
-												<li><a href="index4.html">Home 4</a></li>
-												<li><a href="index5.html">Home 5</a></li>
-											</ul>
 										</li>
-										<li class="current"><a href="#">Features</a>
+										<li ><a href="#">Features</a>
 											<ul>
 												<li><a href="about-us.html">About Us</a></li>
 
 											</ul>
 										</li>
 										
-										<li><a href="index.html">Blog</a>
-											<ul><li><a href="#">ALGORITHMS REALIZED</a>
+										<li class="current" ><a href="index.html">Blog</a>
+											<ul><li><a href ="#">graph_demo</a>
+												<ul><li><a href="#">ALGORITHMS REALIZED</a>
 													<ul>
-														<li><a href="Shortest_distance_blog.html">SHORTEST DISTANCE</a></li>
-														<li><a href="Connected_component_blog.html">CONNECTED COMPONENT</a></li>
+														<li class="current"><a href="graph_demo_Shortest_distance_blog.html">SHORTEST DISTANCE</a></li>
+														<li><a href="graph_demo_Connected_component_blog.html">CONNECTED COMPONENT</a></li>
 													</ul>
 												</li>
 											    <li><a href="#">ALGORITHMS PLANNED TO REALIZE</a>
 													<ul>
-														<li><a href="Page_Rank_blog.html">PAGE RANK</a></li>
-														<li><a href="Strongly_connected_component_blog.html">STRONGLY CONNECTED COMPONENT</a></li>
-														<li><a href="Biconnected_component_blog.html">BICONNECTED COMPONENT</a></li>
+														<li><a href="graph_demo_Page_Rank_blog.html">PAGE RANK</a></li>
+														<li><a href="graph_demo_Strongly_connected_component_blog.html">STRONGLY CONNECTED COMPONENT</a></li>
+														<li><a href="graph_demo_Biconnected_component_blog.html">BICONNECTED COMPONENT</a></li>
 													</ul>
 												</li>
 											</ul>
+										</li>
+									<li><a href ="#">graph_0</a>
+												<ul><li><a href="#">ALGORITHMS REALIZED</a>
+													<ul>
+														<li class="current"><a href="graph_0_Shortest_distance_blog.html">SHORTEST DISTANCE</a></li>
+														<li><a href="graph_0_Connected_component_blog.html">CONNECTED COMPONENT</a></li>
+													</ul>
+												</li>
+											    <li><a href="#">ALGORITHMS PLANNED TO REALIZE</a>
+													<ul>
+														<li><a href="graph_0_Page_Rank_blog.html">PAGE RANK</a></li>
+														<li><a href="graph_0_Strongly_connected_component_blog.html">STRONGLY CONNECTED COMPONENT</a></li>
+														<li><a href="graph_0_Biconnected_component_blog.html">BICONNECTED COMPONENT</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									<li><a href ="#">graph_1</a>
+												<ul><li><a href="#">ALGORITHMS REALIZED</a>
+													<ul>
+														<li class="current"><a href="graph_1_Shortest_distance_blog.html">SHORTEST DISTANCE</a></li>
+														<li><a href="graph_1_Connected_component_blog.html">CONNECTED COMPONENT</a></li>
+													</ul>
+												</li>
+											    <li><a href="#">ALGORITHMS PLANNED TO REALIZE</a>
+													<ul>
+														<li><a href="graph_1_Page_Rank_blog.html">PAGE RANK</a></li>
+														<li><a href="graph_1_Strongly_connected_component_blog.html">STRONGLY CONNECTED COMPONENT</a></li>
+														<li><a href="graph_1_Biconnected_component_blog.html">BICONNECTED COMPONENT</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
 										</li>
 										<li ><a href="contact.html">Contact</a></li>
 										
 								  </ul>
 								</nav>
 								
-								<div class="search-container ">
-									<form action="#" class="search-form">
-										<input type="text" name="search-form-txt" class="search-text" >
-										<input type="submit" value="" class="search-submit" name="submit">
-									</form>
-								</div>
 								
 							</div>
 							
@@ -141,56 +203,123 @@
 	<div class="container m-bot-35 clearfix">
 		<div class="sixteen columns">
 			<div class="page-title-container clearfix">
-				<h1 class="page-title"><span class="bold">OUPS!</span> NOT FOUND!</h1>
+				<h1 class="page-title">SHORTEST DISTANCE</h1>
 			</div>	
 		</div>
 	</div>	
 	
 </div>	<!-- Grey bg end -->	
 
-<!-- 404 -->
-	<div class="container m-bot-100 m-top-80 clearfix">
-		<div class="eight columns ">
-		
-			<div class="error404-numb">
-				404
-			</div>
-			
-		</div>
-		<div class="eight columns ">
-		
-			<div class="error404-text">
-				THE PAGE<br> CANNOT<br> BE FOUND
-			</div>
-			
-		</div>
-	</div>
-			
-			
-			
-			
-			
+<!-- CONTENT -->
+	<div class="container clearfix">
+		<div class="eleven columns m-bot-25">
+		<!-- BLOG ITEM -->
+			<div class="blog-item m-bot-35 clearfix">
+						<div class="hover-item">
+							<div class="clearfix">
+								<div class="blog-item-date-inf-container left">
+										<div class="blog-item-date-cont">
+											<div class="blog-item-date">17</div>
+											<div class="blog-item-mounth">SEP</div>
+										</div>
+										<div>
+											<div class="blog-item-category-img">
+												<img src="images/icon-standart-post.png" alt="Ipsum" >
+											</div>
+										</div>
+								</div>
+								
+								<div class="view view-first">
+									<img src="images/content/port-2-1.jpg" alt="Ipsum" >
+									<div class="mask"></div>	
+									<div class="abs">
+										<a href="images/content/port-2-1.jpg" class="lightbox zoom info"></a>
+										<a href="Shortest_distance_blog.html" class="link info"></a>
+									</div>	
+								</div>
+							</div>	
+							<div class="blog-item-caption-container">
+										<a class="a-invert" href="Shortest_distance_blog.html" ><span class="bold">Shortest</span> Distance</a>
+									<div class="lp-item-container-border clearfix">
+										<div class="blog-info-container">
+												<ul class="clearfix">
+													<li class="author">Admin</li>
+													<li class="tag">Mainly responsible: Simin Yu</li>
+												</ul>
+										</div>
+									</div>
+							</div>
+						</div>
+						<div class="blog-item-text-container">
+							<p>When trying to realize the shortest distance algorithm, we first initialize the status of each vertex to be the infinity(the largest number we can find actually) and we set the status of root point to be 0. Then we go through lots of steps. In each step, every vertex relaxes their status by comparing their own status with the specific number sent from one of their parent vertex, sum of the parent's status and the weight of the edge. We choose the smaller one to replace the status of current vertex. Repeat the above steps until there is no vertex's status need to be changed.</p>
 
+						</div>
 
-
-
-<!-- 404 2 -->
 	
-<div class="light-grey-bg m-top-30">
-	<div class="container clearfix pad-t-b-30">
-		
-		<div class="sixteen columns content-container-white ">
+			</div>
+
+<!--the graph layer-->
+
+<div id="graph"></div>
+<script src="js/shortest_distance/graph_demo_forceLayout.js"></script>
 			
-				<div class="error404-main-text">
-					<h2><span class="bold">You can</span> view our <span class="bold"><a href="portfolio.html">portfolio</a></span>, or read the <span class="bold"><a href="index.html">Blog</a></span></h2>
+			<!--layer end-->
+				<!-- AUTHOR -->
+							
+	
+
+			
+
+		</div>
+
+<!-- SIDEBAR -->
+		<div class="five columns ">
+		
+		<!-- WIDGET -->	
+			<div class="sidebar-item  m-bot-35">
+				<div class="caption-container-main m-bot-30">
+					<div class="caption-text-container">WHAT WE WANNA SAY</div>
+					<div class="content-container-white caption-bg "></div>
 				</div>
 				
-		</div>
+
+				
+				<div>
+				
+					<div id="accordion">
+					
+						  <h3><a href="#">FIRST</a></h3>
+						  <div>
+							<p>We have reviewed what we have learnt in the past two semesters and we managed to use some of them in our realization.<br><br>Our professor also gave us accurate and specific advice.</p>
+						  </div>
+						  
+						  <h3><a href="#">SECOND</a></h3>
+						  <div>
+							<p>We have read some of the papers we can find online to strengthen our programming and <br><br>Also, thanks to professor Xu for giving us great advice about the details of the data structure.</p>
+						  </div>
+						  
+						  <h3><a href="#">THIRD</a></h3>
+						  <div>
+						  <p>We have learnt a bit of javascript to visualize what we have done<br><br>which, however, doesn't meet what we expected.</p>
+						  </div> 
+					 
+					 </div><!-- End accordion -->
+					
+				</div>
+			</div>
 		
+		
+		</div>
 	</div>
-</div>
 
 
+
+
+
+
+
+
+	
 <!-- FOOTER -->
 	<footer>
 		<div class="footer-content-bg">
@@ -218,14 +347,13 @@
 					</div>
 					
 					
-					
 				</div>
 				
 				<div class="one-third column ">
 					<h3 class="caption footer-block">CONTACT <span class="bold">INFO</span></h3>
 					<ul class="footer-contact-info">
 						<li class="footer-loc">
-							East China Noraml University, 3663 North Zhongshan Road, Shanghai
+							East China Noraml University, 3663 North Zhongshan Road, Putuo, Shanghai
 						</li>
 						<li class="footer-phone">
 							(86) 15365180086<br>(86) 18217196690 
@@ -252,9 +380,6 @@
 							</ul>
 						</nav>
 					</div>	
-					<div class="footer-copyright-container right-text">
-					 We wish you</span> to have a great day.</a>
-					</div>
 				</div>
 				
 			</div>

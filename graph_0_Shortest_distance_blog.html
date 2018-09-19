@@ -24,15 +24,55 @@
 		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie-warning.css" ><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" type="text/css" media="screen" href="css/style-ie.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ei8fix.css" ><![endif]-->
-		
+
+
 		
  
 <!-- CSS end -->
+<!-- js begin -->
+            <script src="js/d3.v3.min.js"></script>
+            <script src="js/cola.v3.min.js"></script>
+            <script src="js/shortest_distance/colorbrewer.js"></script>
+            <script src="js/shortest_distance/floydWarshall.js"></script>
 
+<!-- js end -->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		
+    <style>
+    .node circle {
+       cursor: pointer;
+       stroke-width: 4;
+    }
+
+    .node text {
+        font: 16px sans-serif;
+        font-weight: bold;
+        fill: black;
+        cursor: pointer;
+    }
+
+    .link {
+        stroke: #999;
+        stroke-opacity: .6;
+        stroke-width: 2;
+        marker-end: url(#end-arrow);
+    }
+
+    .background {
+        stroke: gray;
+        stroke-width: 1px;
+        fill: none;
+    }
+
+    .edgeLabel {
+        fill: #333;
+        font: 12px sans-serif;
+        pointer-events: none;
+    }
+    </style>
+
 	</head>
 	<body>
 	
@@ -87,13 +127,14 @@
 									<ul class="sf-menu clearfix">
 										<li ><a href="index.html">Home</a>
 										</li>
-										<li class="current"><a href="#">Features</a>
+										<li ><a href="#">Features</a>
 											<ul>
-												<li  class="current"><a href="about-us.html">About Us</a></li>
+												<li><a href="about-us.html">About Us</a></li>
+
 											</ul>
 										</li>
 										
-										<li><a href="index.html">Blog</a>
+										<li class="current" ><a href="index.html">Blog</a>
 											<ul><li><a href ="#">graph_demo</a>
 												<ul><li><a href="#">ALGORITHMS REALIZED</a>
 													<ul>
@@ -149,6 +190,7 @@
 								  </ul>
 								</nav>
 								
+								
 							</div>
 							
 						</div>
@@ -161,7 +203,7 @@
 	<div class="container m-bot-35 clearfix">
 		<div class="sixteen columns">
 			<div class="page-title-container clearfix">
-				<h1 class="page-title">ABOUT US</h1>
+				<h1 class="page-title">SHORTEST DISTANCE</h1>
 			</div>	
 		</div>
 	</div>	
@@ -169,158 +211,115 @@
 </div>	<!-- Grey bg end -->	
 
 <!-- CONTENT -->
-	<div class="container m-bot-35 clearfix">
-		
-	</div>	
-
-	<div class="container m-bot-35 clearfix">
-					<div class="eight columns">
-						<div class="img-about">
-							<img class="" alt="about" src="images/content/about.jpg">
-						</div>
-					</div>
-					<div class="eight columns">
-						
-						<div class="caption-container-main m-bot-30">
-							<div class="caption-text-container">WELCOME TO DaSE_ECNU.2018.GRAPH_PROJECT</div>
-							<div class="content-container-white caption-bg "></div>
-						</div>
-						<p>
-							Image says hi.
-						</p>
-					</div>
-			
-	</div>
-	<div class="container m-bot-35 clearfix">
-
-				<div class="row">
-					<div class="eight columns">
-						<div class="caption-container-main m-bot-30">
-							<div class="caption-text-container">WHAT WE WANNA SAY</div>
-							<div class="content-container-white caption-bg "></div>
-						</div>
-						
-							<ul id="toggle-view">
-								<li>
-									<h3 class="ui-accordion-header"><span class="link"></span>FIRST</h3>
-									<div class="panel">
-										<p>We have reviewed what we have learnt in the past two semesters and we managed to use some of them in our realization.<br><br>Our professor also gave us accurate and specific advice.</p>
-									</div>
-								</li>
-								<li>
-									<h3 class="ui-accordion-header"><span class="link"></span>SECOND</h3>
-									<div class="panel">
-										<p>We have read some of the papers we can find online to strengthen our programming and <br><br>Also, thanks to professor Xu for giving us great advice about the details of the data structure.</p>
-									</div>
-								</li>
-								<li>
-									<h3 class="ui-accordion-header"><span class="link"></span>THIRD</h3>
-									<div class="panel">
-										<p>We have learnt a bit of javascript to visualize what we have done<br><br>which, however, doesn't meet what we expected.</p>
-									</div>
-								</li>
-							</ul>
-						
-					</div>
-					<div class="eight columns">
-						<div class="caption-container-main m-bot-30">
-							<div class="caption-text-container">OUR WORK STATUS</div>
-							<div class="content-container-white caption-bg "></div>
-						</div>
-						<div id="skill-bars">
-							<div class="skill-bar"><div class="skill-bar-content" data-percentage="30"></div><span class="skill-title">PAPER READING 30%</span></div>
-							<div class="skill-bar"><div class="skill-bar-content" data-percentage="90"></div><span class="skill-title">DATA STUCTURE REALIZING 90%</span></div>
-							<div class="skill-bar"><div class="skill-bar-content" data-percentage="70"></div><span class="skill-title">ALGORITHM REALIZING 70%</span></div>
-							<div class="skill-bar"><div class="skill-bar-content" data-percentage="50"></div><span class="skill-title">ALGORITHM ANALYSIS 50%</span></div>
-							<div class="skill-bar"><div class="skill-bar-content" data-percentage="80"></div><span class="skill-title">WEBSITE DESIGNING 80%</span></div>
-						</div>
-					</div>
-				</div>
-			
-
-	</div>
-	
 	<div class="container clearfix">
-		
-		
-			<div class="sixteen columns">
-			
-						<div class="caption-container-main m-bot-30">
-							<div class="caption-text-container">OUR TEAM</div>
-							<div class="content-container-white caption-bg "></div>
+		<div class="eleven columns m-bot-25">
+		<!-- BLOG ITEM -->
+			<div class="blog-item m-bot-35 clearfix">
+						<div class="hover-item">
+							<div class="clearfix">
+								<div class="blog-item-date-inf-container left">
+										<div class="blog-item-date-cont">
+											<div class="blog-item-date">17</div>
+											<div class="blog-item-mounth">SEP</div>
+										</div>
+										<div>
+											<div class="blog-item-category-img">
+												<img src="images/icon-standart-post.png" alt="Ipsum" >
+											</div>
+										</div>
+								</div>
+								
+								<div class="view view-first">
+									<img src="images/content/port-2-1.jpg" alt="Ipsum" >
+									<div class="mask"></div>	
+									<div class="abs">
+										<a href="images/content/port-2-1.jpg" class="lightbox zoom info"></a>
+										<a href="Shortest_distance_blog.html" class="link info"></a>
+									</div>	
+								</div>
+							</div>	
+							<div class="blog-item-caption-container">
+										<a class="a-invert" href="Shortest_distance_blog.html" ><span class="bold">Shortest</span> Distance</a>
+									<div class="lp-item-container-border clearfix">
+										<div class="blog-info-container">
+												<ul class="clearfix">
+													<li class="author">Admin</li>
+													<li class="tag">Mainly responsible: Simin Yu</li>
+												</ul>
+										</div>
+									</div>
+							</div>
 						</div>
-			
-			</div>
-		
+						<div class="blog-item-text-container">
+							<p>When trying to realize the shortest distance algorithm, we first initialize the status of each vertex to be the infinity(the largest number we can find actually) and we set the status of root point to be 0. Then we go through lots of steps. In each step, every vertex relaxes their status by comparing their own status with the specific number sent from one of their parent vertex, sum of the parent's status and the weight of the edge. We choose the smaller one to replace the status of current vertex. Repeat the above steps until there is no vertex's status need to be changed.</p>
 
-		
-			
-			<div class="four columns">
-				<div class="content-container-white m-bot-35 clearfix">	
-					<img alt="" src="images/content/member.jpg">
-								<ul class="social-links clearfix">
-									<li><a class="facebook-link" target="_blank" title="Facebook" href="http://themeforest.net/item/DaSE_ECNU.2018.GRAPH_PROJECT-responsive-html5-template/5590059?ref=abcgomel"></a></li>
-									<li><a class="twitter-link" target="_blank" title="Twitter" href="http://themeforest.net/item/DaSE_ECNU.2018.GRAPH_PROJECT-responsive-html5-template/5590059?ref=abcgomel"></a></li>
-									<li><a class="linkedin-link" target="_blank" title="Dribbble" href="http://themeforest.net/item/DaSE_ECNU.2018.GRAPH_PROJECT-responsive-html5-template/5590059?ref=abcgomel"></a></li>
-								</ul>
-					<div class="lw-item-caption-container">
-						<div class="team-name">
-							<h5>Professor Chen Xu</h5>
-							<span>Adviser</span>
 						</div>
-					</div>
+
+	
+			</div>
+
+<!--the graph layer-->
+
+<div id="graph"></div>
+<script src="js/shortest_distance/graph_0_forceLayout.js"></script>
+			
+			<!--layer end-->
+				<!-- AUTHOR -->
+							
+	
+
+			
+
+		</div>
+
+<!-- SIDEBAR -->
+		<div class="five columns ">
+		
+		<!-- WIDGET -->	
+			<div class="sidebar-item  m-bot-35">
+				<div class="caption-container-main m-bot-30">
+					<div class="caption-text-container">WHAT WE WANNA SAY</div>
+					<div class="content-container-white caption-bg "></div>
+				</div>
+				
+
+				
+				<div>
+				
+					<div id="accordion">
+					
+						  <h3><a href="#">FIRST</a></h3>
+						  <div>
+							<p>We have reviewed what we have learnt in the past two semesters and we managed to use some of them in our realization.<br><br>Our professor also gave us accurate and specific advice.</p>
+						  </div>
+						  
+						  <h3><a href="#">SECOND</a></h3>
+						  <div>
+							<p>We have read some of the papers we can find online to strengthen our programming and <br><br>Also, thanks to professor Xu for giving us great advice about the details of the data structure.</p>
+						  </div>
+						  
+						  <h3><a href="#">THIRD</a></h3>
+						  <div>
+						  <p>We have learnt a bit of javascript to visualize what we have done<br><br>which, however, doesn't meet what we expected.</p>
+						  </div> 
+					 
+					 </div><!-- End accordion -->
+					
 				</div>
 			</div>
-			<div class="four columns">
-				<div class="content-container-white m-bot-35 clearfix">	
-					<img alt="" src="images/content/member.jpg">
-								<ul class="social-links clearfix">
-									<li><a class="facebook-link" target="_blank" title="Facebook" href="http://themeforest.net/item/DaSE_ECNU.2018.GRAPH_PROJECT-responsive-html5-template/5590059?ref=abcgomel"></a></li>
-									<li><a class="twitter-link" target="_blank" title="Twitter" href="http://themeforest.net/item/DaSE_ECNU.2018.GRAPH_PROJECT-responsive-html5-template/5590059?ref=abcgomel"></a></li>
-									<li><a class="linkedin-link" target="_blank" title="Dribbble" href="http://themeforest.net/item/DaSE_ECNU.2018.GRAPH_PROJECT-responsive-html5-template/5590059?ref=abcgomel"></a></li>
-								</ul>
-					<div class="lw-item-caption-container">
-						<div class="team-name">
-							<h5>Simin Yu</h5>
-							<span>Realize the model of algorithm & data structure</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="four columns">
-				<div class="content-container-white m-bot-35 clearfix">	
-					<img alt="" src="images/content/member.jpg">
-								<ul class="social-links clearfix">
-									<li><a class="facebook-link" target="_blank" title="Facebook" href="http://themeforest.net/item/DaSE_ECNU.2018.GRAPH_PROJECT-responsive-html5-template/5590059?ref=abcgomel"></a></li>
-									<li><a class="twitter-link" target="_blank" title="Twitter" href="http://themeforest.net/item/DaSE_ECNU.2018.GRAPH_PROJECT-responsive-html5-template/5590059?ref=abcgomel"></a></li>
-									<li><a class="linkedin-link" target="_blank" title="Dribbble" href="http://themeforest.net/item/DaSE_ECNU.2018.GRAPH_PROJECT-responsive-html5-template/5590059?ref=abcgomel"></a></li>
-								</ul>
-					<div class="lw-item-caption-container">
-						<div class="team-name">
-							<h5>Shuang Wu</h5>
-							<span>Realize a part of the algorithm & Design the website</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			
-			
-			
 		
 		
+		</div>
 	</div>
-			
-			
-			
-			
-			
 
 
 
 
 
 
+
+
+	
 <!-- FOOTER -->
 	<footer>
 		<div class="footer-content-bg">
@@ -348,14 +347,13 @@
 					</div>
 					
 					
-					
 				</div>
 				
 				<div class="one-third column ">
 					<h3 class="caption footer-block">CONTACT <span class="bold">INFO</span></h3>
 					<ul class="footer-contact-info">
 						<li class="footer-loc">
-							East China Noraml University, 3663 North Zhongshan Road, Shanghai
+							East China Noraml University, 3663 North Zhongshan Road, Putuo, Shanghai
 						</li>
 						<li class="footer-phone">
 							(86) 15365180086<br>(86) 18217196690 
@@ -382,9 +380,6 @@
 							</ul>
 						</nav>
 					</div>	
-					<div class="footer-copyright-container right-text">
-					 We wish you</span> to have a great day.</a>
-					</div>
 				</div>
 				
 			</div>
