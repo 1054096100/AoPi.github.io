@@ -93,11 +93,11 @@ d3.dsv("->",'text/plain')('data/graph_simple_demo.txt')
             .attr("class", "node")
             .call(force.drag)
 
-       /* nodeEnter.append("circle")
+        nodeEnter.append("circle")
             .attr("r", 16)
-            .on("click", function(d) { focusOnNode(d, node,  edgeLabelPath, distMatrix) })
-            .on("mouseover", function(d) { focusOnPath(d, link, distMatrix) })
-
+            //.on("click", function(d) { focusOnNode(d, node,  edgeLabelPath, distMatrix) })
+            //.on("mouseover", function(d) { focusOnPath(d, link, distMatrix) })
+        /*
         nodeEnter.append("text")
             .attr("text-anchor", "right")
             .attr("dx", "-2em")
