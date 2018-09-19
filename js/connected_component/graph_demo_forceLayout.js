@@ -108,7 +108,7 @@ d3.dsv("->",'text/plain')('data/graph_simple_demo.txt')
         // TODO hardcoded the root here... a more sophisticated solution would determine the root(s)
        // focusOnNode({ name: 'A' }, node, edgeLabelPath, distMatrix)
 
-        /*force.on("tick", function() {
+        force.on("tick", function() {
             link.attr("d", function (d) {
                 cola.vpsc.makeEdgeBetween(d, d.source.bounds, d.target.bounds, 28)
                 var lineData = [{ x: d.sourceIntersection.x, y: d.sourceIntersection.y }, { x: d.arrowStart.x, y: d.arrowStart.y }]
@@ -116,7 +116,7 @@ d3.dsv("->",'text/plain')('data/graph_simple_demo.txt')
             })
 
             node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")" })
-        })*/
+        })
     })
 
 var colorByDistance = d3.scale.ordinal().domain([0,5]).range(colorbrewer.RdBu[6])
