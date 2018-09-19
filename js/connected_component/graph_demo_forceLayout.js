@@ -93,7 +93,7 @@ d3.dsv("->",'text/plain')('data/graph_simple_demo.txt')
             .attr("class", "node")
             .call(force.drag)
 
-        nodeEnter.append("circle")
+       /* nodeEnter.append("circle")
             .attr("r", 16)
             .on("click", function(d) { focusOnNode(d, node,  edgeLabelPath, distMatrix) })
             .on("mouseover", function(d) { focusOnPath(d, link, distMatrix) })
@@ -104,7 +104,7 @@ d3.dsv("->",'text/plain')('data/graph_simple_demo.txt')
             .attr("dy", ".35em")
             .text(function(d) { return d.name })
             .on("click", function(d) { focusOnNode(d, node,  edgeLabelPath, distMatrix) })
-
+*/
         // TODO hardcoded the root here... a more sophisticated solution would determine the root(s)
        // focusOnNode({ name: 'A' }, node, edgeLabelPath, distMatrix)
 
