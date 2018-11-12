@@ -105,7 +105,7 @@ d3.dsv("->",'text/plain')('data/graph_simple_demo.txt')
             .text(function(d) { return d.name })
             .on("click", function(d) { focusOnNode(d, node,  edgeLabelPath, distMatrix) })
 
-       //  TODO hardcoded the root here... a more sophisticated solution would determine the root(s)
+       //  TODO hardcoded the root here... a more sophistiCed solution would determine the root(s)
         focusOnNode({ name: 'A' }, node, edgeLabelPath, distMatrix)
 
         force.on("tick", function() {
